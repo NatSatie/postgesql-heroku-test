@@ -38,7 +38,7 @@ public class AnimeController {
     }
 
     @PostMapping("/animes")
-    public ResponseEntity<Anime> createTutorial(@RequestBody Anime anime) {
+    public ResponseEntity<Anime> createAnime(@RequestBody Anime anime) {
         try {
             Anime _anime = animeRepository
                     .save(new Anime(anime.getName(), anime.getYear(), anime.getGenre()));
