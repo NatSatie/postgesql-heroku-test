@@ -14,7 +14,7 @@ import javax.persistence.*;
 @Table(name="books")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name="title")
@@ -24,7 +24,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private Category category;
 
-    @Column(name="isbn")
+    @Column(name="isbn", unique = true)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long isbn;
 
