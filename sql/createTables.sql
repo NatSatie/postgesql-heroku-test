@@ -19,8 +19,12 @@ create table book_author (
 
 create table editor (
 	id int not null generated always as identity primary key,
-	stock int not null,
-	editor_name varchar not null ,
+	editor_name varchar not null
+)
+create table stock (
+	id int not null generated always as identity primary key,
+	amount int not null,
+	constraint id_editor foreign key(id) references editor(id),
 	constraint id_book foreign key(id) references book(id)
 )
 
